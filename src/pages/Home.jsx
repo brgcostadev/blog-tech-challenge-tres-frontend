@@ -55,7 +55,11 @@ function Home() {
               <Link to={`/post/${post.id}`}>{post.title}</Link>
             </h2>
             <p>Autor: {post.author}</p>
-            <p>{post.content}</p>
+            <p>
+              {post.content.length > 150
+                ? `${post.content.slice(0, 150)}...`
+                : post.content}
+            </p>
           </article>
         ))
       )}
