@@ -141,3 +141,51 @@ button:hover {
     padding: 16px;
   }
 }
+
+.acoes-admin {
+  display: flex;
+  gap: 12px;
+  margin: 20px 0;
+  align-items: center;
+}
+
+.botao-link {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 6px;
+  background-color: #16a34a;
+  color: white;
+  cursor: pointer;
+}
+
+.botao-link:hover {
+  background-color: #15803d;
+}
+
+.botao-excluir {
+  background-color: #dc2626;
+  color: white;
+}
+
+.botao-excluir:hover {
+  background-color: #b91c1c;
+}
+
+.acoes-post {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.botao-editar {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 6px;
+  background-color: #2563eb;
+  color: white;
+}
+
+.botao-editar:hover {
+  background-color: #1d4ed8;
+}

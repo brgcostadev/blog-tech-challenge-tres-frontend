@@ -42,16 +42,27 @@ function Admin() {
 
       <p>Gerencie os posts do blog.</p>
 
-      <button onClick={sair}>Sair</button>
+      <div className="acoes-admin">
+        <Link to="/criar" className="botao-link">
+          Novo post
+        </Link>
 
-      <Link to="/criar">Novo post</Link>
+        <button onClick={sair}>Sair</button>
+      </div>
 
       {posts.map((post) => (
         <article key={post.id}>
           <h2>{post.title}</h2>
           <p>Autor: {post.author}</p>
-          <Link to={`/editar/${post.id}`}>Editar</Link>
-          <button onClick={() => excluirPost(post.id)}>Excluir</button>
+          <div className="acoes-post">
+            <Link to={`/editar/${post.id}`}>Editar</Link>
+            <button
+              className="botao-excluir"
+              onClick={() => excluirPost(post.id)}
+            >
+              Excluir
+            </button>
+          </div>
         </article>
       ))}
     </main>
