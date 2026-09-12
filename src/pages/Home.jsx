@@ -23,6 +23,16 @@ function Home() {
     return post.title.toLowerCase().includes(busca.toLowerCase());
   });
 
+  async function excluirPost(id) {
+    try {
+      await api.delete(`/posts/${id}`);
+
+      setPosts(posts.filter((post) => post.id !== id));
+    } catch (error) {
+      console.error("Erro ao excluir post:", error);
+    }
+  }
+
   return (
     <main>
       <h1>Posts</h1>
@@ -44,6 +54,7 @@ function Home() {
             </h2>
             <p>Autor: {post.author}</p>
             <p>{post.content}</p>
+            <button onClick={() => excluirPost(post.id)}>Excluir</button>
           </article>
         ))
       )}
