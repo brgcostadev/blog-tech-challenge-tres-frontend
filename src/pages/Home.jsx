@@ -54,7 +54,6 @@ function Home() {
             </h2>
             <p>Autor: {post.author}</p>
             <p>{post.content}</p>
-            <button onClick={() => excluirPost(post.id)}>Excluir</button>
           </article>
         ))
       )}
