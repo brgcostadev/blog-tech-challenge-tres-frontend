@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 function Home() {
   const [posts, setPosts] = useState([]);
   const [busca, setBusca] = useState("");
+  const termo = busca.toLowerCase();
 
   useEffect(() => {
     async function carregarPosts() {
@@ -20,18 +21,12 @@ function Home() {
   }, []);
 
   const postsFiltrados = posts.filter((post) => {
-    return post.title.toLowerCase().includes(busca.toLowerCase());
+    return (
+      post.title.toLowerCase().includes(termo) ||
+      post.content.toLowerCase().includes(termo) ||
+      post.author.toLowerCase().includes(termo)
+    );
   });
-
-  async function excluirPost(id) {
-    try {
-      await api.delete(`/posts/${id}`);
-
-      setPosts(posts.filter((post) => post.id !== id));
-    } catch (error) {
-      console.error("Erro ao excluir post:", error);
-    }
-  }
 
   return (
     <main>
