@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 function Admin() {
   const [posts, setPosts] = useState([]);
+  const { logout } = useAuth();
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function carregarPosts() {
@@ -28,11 +31,18 @@ function Admin() {
     }
   }, []);
 
+  function sair() {
+    logout();
+    navigate("/login");
+  }
+
   return (
     <main>
       <h1>Administração de Posts</h1>
 
       <p>Gerencie os posts do blog.</p>
+
+      <button onClick={sair}>Sair</button>
 
       <Link to="/criar">Novo post</Link>
 
