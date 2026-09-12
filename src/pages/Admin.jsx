@@ -34,6 +34,8 @@ function Admin() {
 
       <p>Gerencie os posts do blog.</p>
 
+      <Link to="/criar">Novo post</Link>
+
       {posts.map((post) => (
         <article key={post.id}>
           <h2>{post.title}</h2>
