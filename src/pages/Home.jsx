@@ -37,7 +37,14 @@ function Home() {
         placeholder="Buscar posts..."
         value={busca}
         onChange={(event) => setBusca(event.target.value)}
+        list="sugestoes"
       />
+
+      <datalist id="sugestoes">
+        {posts.map((post) => (
+          <option key={post.id} value={post.title} />
+        ))}
+      </datalist>
 
       {posts.length === 0 ? (
         <p>Nenhum post encontrado.</p>
