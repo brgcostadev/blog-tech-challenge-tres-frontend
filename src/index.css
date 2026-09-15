@@ -79,6 +79,11 @@ article p {
   margin: 8px 0;
 }
 
+.conteudo-post {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
 form {
   display: flex;
   flex-direction: column;

@@ -19,17 +19,17 @@ function Admin() {
     }
 
     carregarPosts();
-
-    async function excluirPost(id) {
-      try {
-        await api.delete(`/posts/${id}`);
-
-        setPosts(posts.filter((post) => post.id !== id));
-      } catch (error) {
-        console.error("Erro ao excluir post:", error);
-      }
-    }
   }, []);
+
+  async function excluirPost(id) {
+    try {
+      await api.delete(`/posts/${id}`);
+
+      setPosts(posts.filter((post) => post.id !== id));
+    } catch (error) {
+      console.error("Erro ao excluir post:", error);
+    }
+  }
 
   function sair() {
     logout();

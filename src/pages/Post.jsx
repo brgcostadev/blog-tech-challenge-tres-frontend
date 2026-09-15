@@ -27,7 +27,7 @@ function Post() {
     <main>
       <h1>{post.title}</h1>
       <p>Autor: {post.author}</p>
-      <p>{post.content}</p>
+      <p className="conteudo-post">{post.content}</p>
     </main>
   );
 }
